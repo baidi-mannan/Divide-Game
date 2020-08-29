@@ -334,8 +334,11 @@ function bLeave() {
 function bDrop() {
   fill.style.display = "flex";
   this.style.display = "none";
-  fill.innerHTML = extra[0].innerHTML;
-  randomShift(score);
+
+  if (currentDrag) {
+    fill.innerHTML = extra[0].innerHTML;
+    randomShift(score);
+  }
 }
 
 fill.addEventListener("dragstart", bdragStart); // on drag
