@@ -2,9 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+
   font-family: "Recursive", monospace;
-  font-size: 110px;
+  font-size: 100px;
   color: ghostwhite;
   user-select: none;
 }
@@ -13,27 +13,28 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-image: linear-gradient(#485461 0%, #28313b 74%);
   background-color: #485461;
   flex-direction: column;
 }
 .box {
-  width: 420px;
-  height: 420px;
+  width: 360px;
+  height: 360px;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-
   column-gap: 2px;
   grid-row-gap: 2px;
   margin-top: 20px;
+
+  overflow: none;
 }
 
 .c {
-  width: 136px;
-  height: 136px;
+  width: 118px;
+  height: 118px;
   background-color: #485461;
   color: ghostwhite;
   display: flex;
@@ -43,8 +44,8 @@ body {
 }
 
 .drop {
-  width: 136px;
-  height: 136px;
+  width: 118px;
+  height: 118px;
   background-color: #3e79e7;
   color: ghostwhite;
   display: flex;
@@ -55,12 +56,11 @@ body {
 }
 
 .extra {
-  height: 140px;
-  width: 700px;
+  height: 118px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
-  margin-bottom: 5px;
 }
 .f {
   flex: 2;
@@ -72,7 +72,7 @@ body {
 .e2,
 .e3 {
   background-color: #3e79e7;
-  width: 140px;
+  width: 118px;
   border-radius: 20px;
 
   color: white;
@@ -81,12 +81,12 @@ body {
   align-items: center;
 }
 .l {
-  width: 150px;
+  width: 118px;
   display: flex;
   justify-content: center;
 }
 .blank {
-  width: 150px;
+  width: 118px;
   background-color: #485461;
 }
 .e1 {
@@ -94,11 +94,10 @@ body {
 }
 .drag {
   background-color: #3e79e7;
-  width: 140px;
-  height: 140px;
+  width: 118px;
+  height: 118px;
   padding: auto;
   text-align: center;
-  padding-top: 15px;
   color: white;
   cursor: pointer;
 }
