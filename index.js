@@ -122,7 +122,10 @@ function checkGameOver() {
 
   if (n == 9)
     setTimeout(
-      () => (document.querySelector(".gameover").style.display = "flex"),
+      () => (
+        (document.querySelector(".gameover").style.display = "flex"),
+        (document.querySelector(".display").innerHTML = score)
+      ),
       500
     );
 }
