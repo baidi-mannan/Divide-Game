@@ -2,23 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  overflow-x: hidden;
   font-family: "Recursive", monospace;
   font-size: 100px;
   color: ghostwhite;
   user-select: none;
+  text-decoration: none;
 }
 
 body {
   width: 100vw;
-  height: 110vh;
+  height: 105vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-image: linear-gradient(#485461 0%, #28313b 74%);
   background-color: #485461;
   flex-direction: column;
-  overflow-x:hidden;
 }
 .box {
   width: 360px;
@@ -130,4 +130,57 @@ body {
 }
 .hover {
   background-color: #6b8097;
+}
+
+.gameover {
+  width: 100vw;
+  height: 110vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 300;
+  display: none;
+}
+
+.message {
+  width: 596px;
+  height: 532px;
+  border-radius: 20px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  opacity: 200000;
+  border: 12px solid #0f58e0;
+}
+.message h1 {
+  font-size: 75px;
+  color: ghostwhite;
+  font-family: consolas;
+}
+.message h8 {
+  font-size: 45px;
+  color: ghostwhite;
+  font-family: consolas;
+}
+
+.message a {
+  font: 0.3em sans-serif;
+  z-index: 25;
+  width: 250px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(219, 87%, 47%);
+  font-family: sans-serif;
+  color: #fff;
+  opacity: 1 !important;
+  z-index: 340;
+  cursor: pointer;
 }
