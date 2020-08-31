@@ -121,7 +121,10 @@ function checkGameOver() {
   }
 
   if (n == 9)
-    setTimeout(() => alert("Game Over" + "Your Score is " + score), 0);
+    setTimeout(
+      () => (document.querySelector(".gameover").style.display = "flex"),
+      500
+    );
 }
 
 // ---------------------------------LOGIC--------------------------------------//
@@ -356,9 +359,12 @@ function bdragStart() {
 function bdragEnd(e) {
   if (validDrag == 1) {
     blank.style.display = "flex";
-    this.style.display = "none"; // agr gira toh blank dikhega
+    this.style.display = "none"; // agr box m drop toh blank dikhega
   } else {
     this.style.display = "flex";
     blank.style.display = "none"; // nahi  TOH kuch nahi
   }
+}
+function xyz() {
+  location.reload(true);
 }
