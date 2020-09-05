@@ -184,3 +184,48 @@ body {
   z-index: 340;
   cursor: pointer;
 }
+.gamestart {
+  width: 100vw;
+  height: 110vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 300;
+}
+
+.st {
+  width: 596px;
+  height: 532px;
+  border-radius: 20px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  opacity: 200000;
+  border: 12px solid #0f58e0;
+}
+.st h1 {
+  font-size: 105px;
+  color: #5db1ff;
+  font-family: consolas;
+}
+.st a {
+  font: 0.3em sans-serif;
+  z-index: 25;
+  width: 80%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(219, 87%, 47%);
+  font-family: sans-serif;
+  color: #fff;
+  opacity: 1 !important;
+  z-index: 340;
+  cursor: pointer;
+}
