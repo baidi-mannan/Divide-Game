@@ -85,7 +85,7 @@ function Drop() {
   }
   if (currentDrag == 0) {
     this.innerHTML = fill.innerHTML;
-    validDrag = 1;
+    validDrag = 1; // isse check hoga ki grid m gra ki nhi
   }
 
   this.className = "drop";
@@ -94,6 +94,7 @@ function Drop() {
   adjacent(index[0], index[1], value);
   score = score + Math.floor(value / 10);
   document.querySelector("#score").innerHTML = score;
+  start = 1;
 }
 
 function findIndex(t) {
@@ -108,7 +109,7 @@ function findIndex(t) {
 }
 
 let time = 1000;
-
+let start = 0;
 function checkGameOver() {
   var n = 0;
 
@@ -128,6 +129,9 @@ function checkGameOver() {
       ),
       500
     );
+  if (n == 0 && start == 1) {
+    score = score + 40;
+  }
 }
 
 // ---------------------------------LOGIC--------------------------------------//
@@ -370,4 +374,7 @@ function bdragEnd(e) {
 }
 function xyz() {
   location.reload(true);
+}
+function play() {
+  document.querySelector(".gamestart").style.display = "none";
 }
