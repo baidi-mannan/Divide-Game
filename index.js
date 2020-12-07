@@ -378,3 +378,9 @@ function xyz() {
 function play() {
   document.querySelector(".gamestart").style.display = "none";
 }
+
+function showRules(){
+  document.querySelector(".gamestart").classList.add("rules-box");
+  document.querySelector(".gamestart").innerHTML = "<p><ul><li class= 'textSize'>How to play?</li><li>1. It is a 3*3 number grid.</li> <li>2. Drag the numbers from the rightmost of 3 numbers suggested below into the grid, which initially is kept empty.</li><li>3. If an adjacent number is a factor of or is divisible by that number, the smaller number vanishes and the larger number is updated by the quotient and consequently, the score gets updated.</li><li>4. There is a blank box in the right bottom to which you can drag and save a number for later.</li><li>5. Game is over when the grid is filled with the numbers not divisible by each other.</li></ul></p>";
+  
+}

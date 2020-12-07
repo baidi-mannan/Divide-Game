@@ -21,6 +21,7 @@ body {
   flex-direction: column;
 }
 .box {
+  margin-left: 30vw;
   width: 360px;
   height: 360px;
   display: grid;
@@ -62,6 +63,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
+  margin-left: 30vw;
 }
 .f {
   flex: 2;
@@ -190,7 +192,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,7 +219,7 @@ body {
 .st a {
   font: 0.3em sans-serif;
   z-index: 25;
-  width: 80%;
+  width: 60%;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -228,4 +230,29 @@ body {
   opacity: 1 !important;
   z-index: 340;
   cursor: pointer;
+}
+
+li {
+  font-size: 17px;
+  padding: 10px;
+}
+
+.rules-box {
+  margin-left: 50px;
+  margin-top: 100px;
+  width: 30vw;
+  height: 80vh;
+  border-radius: 20px;
+  position: absolute;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  opacity: 200000;
+  border: 10px solid #0f58e0;
+}
+
+.textSize {
+  font-size: 30px;
+  text-decoration: underline;
+  color: #0f58e0;
 }
