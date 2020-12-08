@@ -6,14 +6,25 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
-    <h7 style="font-size: 50%; text-shadow: 2px 2px 5px black; margin-left:30vw; ;"
+    <h7 style="font-size: 50%; text-shadow: 2px 2px 5px black;"
       >SCORE: <span id="score">0</span></h7
     >
 
     <div class="gamestart">
       <div class="st">
         <h1>DIV/IDE</h1>
-        <a onclick="showRules()">PLAY GAME</a>
+        <a class="button" href="#popup1" onclick="play()">PLAY GAME</a>
+      </div>
+    </div>
+
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>How to play?</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          <p><ul><li>1. It is a 3*3 number grid.</li> <li>2. Drag the numbers from the rightmost of 3 numbers suggested below into the grid, which initially is kept empty.</li><li>3. If an adjacent number is a factor of or is divisible by that number, the smaller number vanishes and the larger number is updated by the quotient and consequently, the score gets updated.</li><li>4. There is a blank box in the right bottom to which you can drag and save a number for later.</li><li>5. Game is over when the grid is filled with the numbers not divisible by each other.</li></ul></p>
+          <a class="goButton" href="#">Let's Go</a>
+        </div>
       </div>
     </div>
 
