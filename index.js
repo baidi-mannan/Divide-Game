@@ -378,3 +378,4 @@ function xyz() {
 function play() {
   document.querySelector(".gamestart").style.display = "none";
 }
+
