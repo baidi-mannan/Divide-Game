@@ -136,27 +136,30 @@ function checkGameOver() {
 
 // ---------------------------------LOGIC--------------------------------------//
 function adjacent(i, j, value) {
+
+  // fval stores the value of current cell after reduction from adjacent cell
+  var fval = value;  
   if (j - 1 >= 0) {
     //For left cell
-    leftCell(i, j, value);
+    fval = leftCell(i, j, value, fval); // Update the value of fval after each function call
   }
 
   if (j + 1 < n) {
-    rightCell(i, j, value);
+    fval = rightCell(i, j, value, fval);
   }
 
   if (i - 1 >= 0) {
-    aboveCell(i, j, value);
+    fval = aboveCell(i, j, value, fval);
   }
 
   if (i + 1 < n) {
-    belowCell(i, j, value);
+    fval = belowCell(i, j, value, fval);
   }
 
   checkGameOver();
 }
 
-function leftCell(i, j, value) {
+function leftCell(i, j, value, fval) {
   var x = parseInt(grid[i][j - 1].innerHTML);
 
   if (x % value == 0) {
@@ -172,6 +175,10 @@ function leftCell(i, j, value) {
   if (value % x == 0) {
     score = score + 10;
     value = value / x;
+
+    if(fval % x == 0) fval = fval/x;
+    if(value>fval) value = fval;
+
     grid[i][j].innerHTML = value;
     grid[i][j - 1].innerHTML = "";
     grid[i][j - 1].className = "c";
@@ -183,13 +190,14 @@ function leftCell(i, j, value) {
       value = "";
       score = score - 10;
 
-      return;
+      return fval;
     }
     setTimeout(() => adjacent(i, j, value), time);
   }
+  return fval;
 }
 
-function rightCell(i, j, value) {
+function rightCell(i, j, value, fval) {
   var x = parseInt(grid[i][j + 1].innerHTML);
 
   if (x % value == 0) {
@@ -205,6 +213,10 @@ function rightCell(i, j, value) {
   if (value % x == 0) {
     score = score + 10;
     value = value / x;
+
+    if(fval % x == 0) fval = fval/x;
+    if(value>fval) value = fval;
+
     grid[i][j].innerHTML = value;
     grid[i][j + 1].innerHTML = "";
     grid[i][j + 1].className = "c";
@@ -216,13 +228,14 @@ function rightCell(i, j, value) {
       value = "";
 
       score = score - 10;
-      return;
+      return fval;
     }
     setTimeout(() => adjacent(i, j, value), time);
   }
+  return fval;
 }
 
-function aboveCell(i, j, value) {
+function aboveCell(i, j, value, fval) {
   var x = parseInt(grid[i - 1][j].innerHTML);
 
   if (x % value == 0) {
@@ -238,6 +251,10 @@ function aboveCell(i, j, value) {
   if (value % x == 0) {
     score = score + 10;
     value = value / x;
+
+    if(fval % x == 0) fval = fval/x;
+    if(value>fval) value = fval;
+
     grid[i][j].innerHTML = value;
     grid[i - 1][j].innerHTML = "";
     grid[i - 1][j].className = "c";
@@ -249,13 +266,14 @@ function aboveCell(i, j, value) {
       value = "";
 
       score = score - 10;
-      return;
+      return fval;
     }
     setTimeout(() => adjacent(i, j, value), time);
   }
+  return fval;
 }
 
-function belowCell(i, j, value) {
+function belowCell(i, j, value, fval) {
   var x = parseInt(grid[i + 1][j].innerHTML);
 
   if (x % value == 0) {
@@ -271,6 +289,10 @@ function belowCell(i, j, value) {
   if (value % x == 0) {
     score = score + 10;
     value = value / x;
+
+    if(fval % x == 0) fval = fval/x;
+    if(value>fval) value = fval;
+
     grid[i][j].innerHTML = value;
     grid[i + 1][j].innerHTML = "";
     grid[i + 1][j].className = "c";
@@ -282,10 +304,11 @@ function belowCell(i, j, value) {
       value = "";
       score = score - 10;
 
-      return;
+      return fval;
     }
     setTimeout(() => adjacent(i, j, value), time);
   }
+  return fval;
 }
 
 // -------------------------------------------------------------//
